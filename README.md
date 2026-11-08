@@ -192,3 +192,6 @@ The interpreter is written in Python and uses a lexer, recursive-descent parser,
 - Error locations are strongest for lexer and parser errors; some runtime errors currently lack source coordinates.
 
 Somax 1.0 is an initial language release, not a production sandbox. Treat programs as trusted code.
+
+## License
+This project is licensed under the [MIT License](LICENSE)
