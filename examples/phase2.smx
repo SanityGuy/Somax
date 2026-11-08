@@ -1,0 +1,18 @@
+## Somax 0.2 testing
+
+int x = 10;
+int y = 20;
+int result = x + y;
+
+string developer = "Souyan";
+float version = 0.2;
+bool stable = true;
+
+out.print("Hello from Somax!");
+out.print(f"Developer: {developer}");
+out.print(f"Version: {version}");
+out.print(result);
+
+x = 100;
+out.print(x);
+out.print(stable);

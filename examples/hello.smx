@@ -1,0 +1,10 @@
+## My first Somax program
+
+int x = 10;
+int y = 20;
+int z = x + y;
+
+out.print("Hello World!");
+out.print(z);
+out.print(x * y);
+out.print((x + y) * 2);

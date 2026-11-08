@@ -1,0 +1,39 @@
+## Somax 0.3 - Conditions
+
+int score = 85;
+
+if score >= 90 then {
+    out.print("Excellent");
+} else if score >= 75 then {
+    out.print("Good");
+} else {
+    out.print("Keep practicing");
+}
+
+## Somax 0.4 - Loops
+
+int count = 0;
+
+while count < 3 then {
+    out.print(f"While: {count}");
+    count++;
+}
+
+for (int i = 1; i <= 5; i++) then {
+    out.print(f"For: {i}");
+}
+
+## Somax 0.5 - Functions
+
+function multiply(int a, int b) {
+    return a * b;
+}
+
+function greet(string name) {
+    out.print(f"Hello, {name}!");
+}
+
+int result = multiply(10, 20);
+
+greet("Souyan");
+out.print(result);
