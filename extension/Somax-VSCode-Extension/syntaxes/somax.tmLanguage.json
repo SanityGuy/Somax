@@ -1,0 +1,137 @@
+{
+  "scopeName": "source.somax",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#formatted-strings"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-hash.somax",
+          "match": "##.*$"
+        }
+      ]
+    },
+    "formatted-strings": {
+      "name": "string.quoted.double.somax",
+      "begin": "f(?=\")",
+      "end": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "storage.type.string.somax"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#escapes"
+        },
+        {
+          "name": "constant.other.placeholder.somax",
+          "match": "\\{[A-Za-z_][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z0-9_]*)*(?:\\[\\d+\\])?\\}"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.somax",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "include": "#escapes"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.somax",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "include": "#escapes"
+            }
+          ]
+        }
+      ]
+    },
+    "escapes": {
+      "patterns": [
+        {
+          "name": "constant.character.escape.somax",
+          "match": "\\\\[ntr\\\\\"']"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.somax",
+          "match": "\\b\\d+(?:\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "name": "keyword.control.somax",
+      "match": "\\b(?:function|return|if|else|while|for|then|import|as)\\b"
+    },
+    "types": {
+      "name": "storage.type.somax",
+      "match": "\\b(?:int|float|double|string|char|bool|bit|array)\\b"
+    },
+    "constants": {
+      "name": "constant.language.somax",
+      "match": "\\b(?:true|false|null)\\b"
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.output.somax",
+          "match": "\\b(?:out\\.print|console\\.(?:read|write|clear)|math\\.(?:sqrt|pow|abs|round|floor|ceil)|text\\.(?:upper|lower|trim|replace|contains)|convert\\.(?:toInt|toFloat|toString))(?=\\s*\\()"
+        },
+        {
+          "name": "entity.name.function.somax",
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?=\\s*\\()"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.somax",
+          "match": "\\b(?:and|or|not)\\b"
+        },
+        {
+          "name": "keyword.operator.somax",
+          "match": "==|!=|<=|>=|[+*/%=<>-]"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "somax-language",
+  "displayName": "Somax Language Support",
+  "description": "Syntax highlighting, snippets, run commands, and optional run-on-save support for Somax (.smx).",
+  "version": "0.1.0",
+  "publisher": "souyan",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:somax"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "somax",
+        "aliases": [
+          "Somax",
+          "somax"
+        ],
+        "extensions": [
+          ".smx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "somax",
+        "scopeName": "source.somax",
+        "path": "./syntaxes/somax.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "somax",
+        "path": "./snippets/somax.code-snippets"
+      }
+    ],
+    "commands": [
+      {
+        "command": "somax.runFile",
+        "title": "Somax: Run Current File"
+      },
+      {
+        "command": "somax.runSelection",
+        "title": "Somax: Run Selected Text (not supported yet)"
+      },
+      {
+        "command": "somax.toggleRunOnSave",
+        "title": "Somax: Toggle Run on Save"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "somax.runFile",
+          "when": "editorLangId == somax",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "somax.runFile",
+          "when": "editorLangId == somax",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Somax",
+      "properties": {
+        "somax.pythonPath": {
+          "type": "string",
+          "default": "python",
+          "description": "Python executable used to run Somax. Example: python, py, or an absolute path."
+        },
+        "somax.runOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically run the active Somax file after it is saved."
+        },
+        "somax.clearTerminalBeforeRun": {
+          "type": "boolean",
+          "default": true,
+          "description": "Clear the Somax terminal before each run."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "Somax program": {
+    "prefix": "somax",
+    "body": [
+      "## ${1:Program description}",
+      "",
+      "string developer = \"${2:Souyan}\";",
+      "out.print(f\"Hello, {developer}!\");",
+      "",
+      "$0"
+    ],
+    "description": "Basic Somax program"
+  },
+  "Function": {
+    "prefix": "function",
+    "body": [
+      "function ${1:name}(${2:int value}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Declare a typed Somax function"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} then {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If else statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition} then {",
+      "\t${2}",
+      "} else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If/else statement"
+  },
+  "For loop": {
+    "prefix": "for",
+    "body": [
+      "for (int ${1:i} = 0; ${1:i} < ${2:10}; ${1:i} = ${1:i} + 1) then {",
+      "\t$0",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition} then {",
+      "\t$0",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Array": {
+    "prefix": "array",
+    "body": [
+      "array ${1:name} = [${2:\"first\", \"second\"}];",
+      "$0"
+    ],
+    "description": "Declare an array"
+  },
+  "Import module": {
+    "prefix": "import",
+    "body": [
+      "import ${1:math};",
+      "$0"
+    ],
+    "description": "Import a Somax module"
+  },
+  "Formatted output": {
+    "prefix": "print",
+    "body": [
+      "out.print(f\"${1:Value: }{${2:value}}\");"
+    ],
+    "description": "Print a formatted string"
+  }
+}
