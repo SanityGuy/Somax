@@ -1,0 +1,11 @@
+array projects = ["SoLMS", "SkyHelp", "NodeMC", "Somax"];
+out.print(projects);
+out.print(projects.deserialize());
+out.print(projects.space());
+out.print(projects[0]);
+int projectCount = projects.length();
+int somaxIndex = projects.findExact("Somax");
+out.print(f"Project count: {projectCount}");
+out.print(f"Somax index: {somaxIndex}");
+projects.add("Another project");
+out.print(projects);

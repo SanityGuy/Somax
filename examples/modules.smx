@@ -1,0 +1,6 @@
+import math;
+import text;
+
+float root = math.sqrt(144);
+out.print(root);
+out.print(text.upper("somax is awesome"));

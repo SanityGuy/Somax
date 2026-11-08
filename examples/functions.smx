@@ -1,0 +1,11 @@
+function calculate(int x, int y) {
+    return x * y;
+}
+
+function introduce(string name) {
+    out.print(f"Hello, {name}!");
+}
+
+introduce("Souyan");
+int result = calculate(10, 20);
+out.print(f"Calculation: {result}");

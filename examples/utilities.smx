@@ -1,0 +1,3 @@
+function greet(string name) {
+    out.print(f"Welcome, {name}!");
+}
